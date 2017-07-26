@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+go build -o demo -ldflags "-X \"main.Version=$(cat VERSION)\" -X \"main.CommitSHA=$(git rev-parse --short HEAD)\" -X \"main.CommitDate=$(git show -s --format=%cI HEAD)\""
