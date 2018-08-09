@@ -10,7 +10,7 @@
 
 ---
 
-# First a terrible (terrifying?) introduction..
+### First a terrible (terrifying?) introduction..
 
 Lets first establish what makes a *bad* command line interface.
 
@@ -147,7 +147,7 @@ We'll expand on these in the next slides and then implement some of them to impr
 
 ---
 
-# Respect the users
+## Respect the users
 
 Have to balance out:
 
@@ -231,7 +231,7 @@ These are all difference categories of users and each have their own requirement
 
 ---
 
-# Respect the environment
+## Respect the environment
 
 It doesn't always run in the same context as it does on your machine.
 
@@ -250,7 +250,7 @@ Users have different
 
 ---
 
-# Transparency
+## Transparency
 
 Don't hide information that would be better out in the open.
 
@@ -660,7 +660,11 @@ But again, only work in tty's that will actual render them.
 
     ESC[38;5mmy important log lineESC[0m that you must look at
 
-`--no-color`
+`--no-color` should disable colours..
+
+And remember that terminals often have colour schemes that change the default colour maps.
+
+
 
 ---
 
@@ -688,10 +692,27 @@ This can help to keep your config example synchronised with the code that reads 
 
 ## Apply CI/CD practices
 
+- You **can** unittest your CLI! (as long as you design it to be tested from the beginning)
+    - Vital to test the way you _think_ your argument parsing works..
+  
 - Create functional and integration tests for your CLI
-- Catch regressions before they merge
-- Automatically release new versions to github/webserver/repository
+  
+- Check your documentation examples (doctest?)
+  
+- Catch regressions before they are reported
+  
+- Automatically release new versions to github, repository
+  
 - Combined with versioning, this removes a lot of the manual effort involved in maintaining your tools
+
+---
+
+## A message about bash and/or Make
+
+- People often ask what is wrong with writing and distributing long and complex bash scripts or make targets
+    - ALL OF THE REASONS IN THESE SLIDES
+
+- Yes you can implement some of the improvements, but really you're going to end up with an unmaintainable, and unsupported, mess.
 
 ---
 
@@ -700,10 +721,15 @@ This can help to keep your config example synchronised with the code that reads 
 ### 1. Respect your users
 
 - They _will_ need help
+  
 - Developers are also users
+  
 - So are machines
-- Someone will try to run it via a Bash script through a Rails app and pass the output over HTTP in JSON to be manipulated in Javascript.
+  
+- Someone will try to run it via a Fish script through a Rails app and pass the output over HTTP in JSON to be manipulated in Javascript.
+  
 - Empower those who use it
+  
 - Provide remedy suggestions
 
 ---
@@ -711,14 +737,21 @@ This can help to keep your config example synchronised with the code that reads 
 ### 2. Respect your environment
 
 - Bash is not the only shell
+  
 - Either restrict compilation to one platform, or commit to being cross platform.
+  
 - Sometimes there isn't a TTY
+  
 - Multi-byte characters may not display correctly
+  
 - Control codes may not function correctly
+  
 - Colours may not display at all
 
 ### 3. Transparency
 
 - Be contactable
+  
 - Make it easy to identify and reproduce bugs
+  
 - Explain your errors
