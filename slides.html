@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>slides.md</title>
+  <meta name="GENERATOR" content="Blackfriday Markdown Processor v2.0">
+  <meta charset="utf-8">
+</head>
+<body>
+
+
+<style>
+html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2em;margin:.67em 0}
+hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}
+a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
+b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}
+img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}
+button,input{overflow:visible}button,select{text-transform:none}
+button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button}
+button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0}
+button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText}
+fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}
+progress{vertical-align:baseline}textarea{overflow:auto}[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0}
+[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto}[type="search"]{-webkit-appearance:textfield;outline-offset:-2px}
+[type="search"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}
+summary{display:list-item}template{display:none}[hidden]{display:none}
+</style>
+
+<style>
+@charset "UTF-8";
+
+ 
+
+.markdown-body {
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	color: #111;
+    counter-reset: sidenote-counter;
+}
+
+h1, h2, h3, h4, h5 {
+    margin-top: 1rem;
+    line-height: 1;
+    font-weight: 400;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    font-size: 4.2rem;
+}
+
+h2 {
+    margin-bottom: 0;
+    font-size: 3.2rem;
+}
+
+h3 {
+    font-size: 2.2rem;
+    margin-bottom: 0;
+}
+
+h4 {
+    font-size: 1.7rem;
+    margin-bottom: 0;
+}
+
+hr { display: block;
+     height: 1px;
+     width: 55%;
+     border: 0;
+     border-top: 1px solid #ccc;
+     margin: 1em 0;
+     padding: 0; }
+
+p.subtitle { font-style: italic;
+             margin-top: 1rem;
+             margin-bottom: 1rem;
+             font-size: 1.8rem;
+             display: block;
+             line-height: 1; }
+
+.numeral { font-family: et-book-roman-old-style; }
+
+.danger { color: red; }
+
+article { position: relative;
+          padding: 5rem 0rem; }
+
+section { padding-top: 1rem;
+          padding-bottom: 1rem; }
+
+p, ol, ul { font-size: 1.4rem;
+            line-height: 2rem; }
+
+p { margin-top: 1.4rem;
+    margin-bottom: 1.4rem;
+    padding-right: 0;
+    vertical-align: baseline; }
+
+ 
+div.epigraph { margin: 5em 0; }
+
+div.epigraph > blockquote { margin-top: 3em;
+                            margin-bottom: 3em; }
+
+div.epigraph > blockquote, div.epigraph > blockquote > p { font-style: italic; }
+
+div.epigraph > blockquote > footer { font-style: normal; }
+
+div.epigraph > blockquote > footer > cite { font-style: italic; }
+ 
+
+blockquote {
+	margin: 0;
+	margin-right: 1em;
+	font-size: 1.4rem;
+	font-style: italic;
+	padding-left: 1em;
+	border-left: 0.25em solid #111;
+}
+
+blockquote p {
+	margin-right: 40px;
+}
+
+blockquote footer {
+                    font-size: 1.1rem;
+                    text-align: right; }
+
+section > p, section > footer, section > table { width: 55%; }
+
+ 
+section > ol, section > ul { width: 50%;
+                             -webkit-padding-start: 5%; }
+
+li:not(:first-child) { margin-top: 0.25rem; }
+
+figure { padding: 0;
+         border: 0;
+         font-size: 100%;
+         font: inherit;
+         vertical-align: baseline;
+         max-width: 55%;
+         -webkit-margin-start: 0;
+         -webkit-margin-end: 0;
+         margin: 0 0 3em 0; }
+
+figcaption { float: right;
+             clear: right;
+             margin-top: 0;
+             margin-bottom: 0;
+             font-size: 1.1rem;
+             line-height: 1.6;
+             vertical-align: baseline;
+             position: relative;
+             max-width: 40%; }
+
+figure.fullwidth figcaption { margin-right: 24%; }
+
+ 
+a:link, a:visited { color: inherit; }
+
+a:link {
+    text-decoration: underline;
+}
+
+ 
+img { max-width: 100%; }
+
+.sidenote, .marginnote { float: right;
+                         clear: right;
+                         margin-right: -60%;
+                         width: 50%;
+                         margin-top: 0;
+                         margin-bottom: 0;
+                         font-size: 1.1rem;
+                         line-height: 1.3;
+                         vertical-align: baseline;
+                         position: relative; }
+
+.sidenote-number { counter-increment: sidenote-counter; }
+
+.sidenote-number:after, .sidenote:before { font-family: et-book-roman-old-style;
+                                           position: relative;
+                                           vertical-align: baseline; }
+
+.sidenote-number:after { content: counter(sidenote-counter);
+                         font-size: 1rem;
+                         top: -0.5rem;
+                         left: 0.1rem; }
+
+.sidenote:before { content: counter(sidenote-counter) " ";
+                   top: -0.5rem; }
+
+blockquote .sidenote, blockquote .marginnote { margin-right: -82%;
+                                               min-width: 59%;
+                                               text-align: left; }
+
+div.fullwidth, table.fullwidth { width: 100%; }
+
+div.table-wrapper { overflow-x: auto;
+                    font-family: "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif; }
+
+.sans { font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+        letter-spacing: .03em; }
+
+code { font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+       font-size: 1.0rem;
+       line-height: 1.42; }
+
+.sans > code { font-size: 1.2rem; }
+
+h1 > code, h2 > code, h3 > code { font-size: 0.80em; }
+
+.marginnote > code, .sidenote > code { font-size: 1rem; }
+
+pre.code { font-size: 0.9em;
+           width: 52.5%;
+           margin-left: 2.5%;
+           overflow-x: auto; }
+
+pre.code.fullwidth { width: 90%; }
+
+.fullwidth { max-width: 90%;
+             clear:both; }
+
+span.newthought { font-variant: small-caps;
+                  font-size: 1.2em; }
+
+input.margin-toggle { display: none; }
+
+label.sidenote-number { display: inline; }
+
+label.margin-toggle:not(.sidenote-number) { display: none; }
+
+.iframe-wrapper { position: relative;
+                  padding-bottom: 56.25%;  
+                  padding-top: 25px;
+                  height: 0; }
+
+.iframe-wrapper iframe { position: absolute;
+                         top: 0;
+                         left: 0;
+                         width: 100%;
+                         height: 100%; }
+
+table {
+    font-size: 1.4rem;
+    padding: 0;
+}
+table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n) {
+    background-color: #f8f8f8;
+}
+table tr th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    border: 1px solid #cccccc;
+    text-align: left;
+    margin: 0;
+    padding: 0.5rem 1rem;
+}
+table tr td {
+    border: 1px solid #cccccc;
+    text-align: left;
+    margin: 0;
+    padding: 0.5rem 1rem;
+}
+table tr th :first-child, table tr td :first-child {
+    margin-top: 0;
+}
+table tr th :last-child, table tr td :last-child {
+    margin-bottom: 0;
+}
+</style>
+<style>  .chroma { background-color: #ffffff }
+  .chroma .err {  }
+  .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+  .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; width: auto; overflow: auto; display: block; }
+  .chroma .hl { display: block; width: 100%; }
+  .chroma .lnt { margin-right: 0.4em; padding: 0 0.4em 0 0.4em; display: block; }
+  .chroma .ln { margin-right: 0.4em; padding: 0 0.4em 0 0.4em; }
+  .chroma .k { font-weight: bold }
+  .chroma .kc { font-weight: bold }
+  .chroma .kd { font-weight: bold }
+  .chroma .kn { font-weight: bold }
+  .chroma .kp {  }
+  .chroma .kr { font-weight: bold }
+  .chroma .kt {  }
+  .chroma .nc { font-weight: bold }
+  .chroma .ni { font-weight: bold }
+  .chroma .ne { font-weight: bold }
+  .chroma .nn { font-weight: bold }
+  .chroma .nt { font-weight: bold }
+  .chroma .s { font-style: italic }
+  .chroma .sa { font-style: italic }
+  .chroma .sb { font-style: italic }
+  .chroma .sc { font-style: italic }
+  .chroma .dl { font-style: italic }
+  .chroma .sd { font-style: italic }
+  .chroma .s2 { font-style: italic }
+  .chroma .se { font-weight: bold; font-style: italic }
+  .chroma .sh { font-style: italic }
+  .chroma .si { font-weight: bold; font-style: italic }
+  .chroma .sx { font-style: italic }
+  .chroma .sr { font-style: italic }
+  .chroma .s1 { font-style: italic }
+  .chroma .ss { font-style: italic }
+  .chroma .ow { font-weight: bold }
+  .chroma .c { font-style: italic }
+  .chroma .ch { font-style: italic }
+  .chroma .cm { font-style: italic }
+  .chroma .c1 { font-style: italic }
+  .chroma .cs { font-style: italic }
+  .chroma .cp {  }
+  .chroma .cpf {  }
+  .chroma .ge { font-style: italic }
+  .chroma .gh { font-weight: bold }
+  .chroma .gp { font-weight: bold }
+  .chroma .gs { font-weight: bold }
+  .chroma .gu { font-weight: bold }
+</style>
+<style>
+html {
+	height: 100%;
+	font-size: 18px;
+}
+
+body {
+	height: 100%;
+    display: flex;
+    flex-flow: column;
+	background: #444444;
+	justify-content: center;
+}
+
+.slide-wrap {
+	width: 1366px;
+	height: 768px;
+	align-self: center;
+	display: grid;
+	box-sizing: border-box;
+	background: white;
+	background: #fffff8;
+	padding: 1rem;
+    border-radius: 0.3rem;
+	box-shadow: 0px 0.2rem 0.6rem black;
+	padding-left: 3rem;
+    padding-right: 3rem;
+	position: absolute;
+	overflow: hidden;
+	grid-auto-columns: 1fr;
+	grid-auto-rows: 1fr;
+}
+
+.slide-wrap-halign-left {justify-items: start;}
+.slide-wrap-halign-center {justify-items: center;}
+.slide-wrap-halign-right {justify-items: end;}
+.slide-wrap-valign-top {align-items: start;}
+.slide-wrap-valign-center {align-items: center;}
+.slide-wrap-valign-bottom {align-items: end;}
+.slide-wrap-talign-left {text-align: left;}
+.slide-wrap-talign-center {text-align: center;}
+.slide-wrap-talign-right {text-align: right;}
+
+.page-number {
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 0.5rem;
+	font-size: 0.9em;
+	color: darkgrey;
+}
+
+.page-footer {
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin: 0.5rem;
+	font-size: 0.9em;
+	color: darkgrey;
+}
+
+pre.chroma {
+	padding: 1rem;
+	border-radius: 0.5rem;
+	border: 1px solid lightgrey;
+}
+</style>
+
+<style>
+html {
+	height: auto;
+	font-size: 18px;
+}
+
+body {
+	justify-content: start;
+	position: relative;
+}
+
+.slide-wrap {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+@media print {
+	.slide-wrap {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		page-break-before: always;
+		page-break-inside: avoid;
+	}
+}
+
+@page {
+	size: 1407px 809px;
+}
+</style>
+
+	<div class="slide-wrap slide-wrap-halign-left slide-wrap-valign-center">
+		<div class="markdown-body">
+	<p><meta valign="center" halign="left"></p>
+
+<h3>Developing Effective CLI Apps</h3>
+
+<h4>In Golang, or Otherwise</h4>
+
+<p>10 August 2018</p>
+
+<p><meta footer="Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018"></p>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">1/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h1>First a terrible (terrifying?) introduction..</h1>
+
+<p>Lets first establish what makes a <em>bad</em> command line interface.</p>
+
+<p>You downloaded a &quot;recommended&quot; binary from some web page:</p>
+<pre class="chroma">$ ls -al demo
+-rwxr-xr-x  1 benmeier  staff   1.6M Jul 25 21:40 demo*
+</pre>
+<blockquote>
+<p>&quot;Solves the greatest programming problem known to man!&quot; - Developer</p>
+</blockquote>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">2/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h3>Run it!</h3>
+<pre class="chroma">$ ./demo
+
+panic: runtime error: index out of range
+
+goroutine 1 [running]:
+main.main()
+    /Users/benmeier/projects/go_workspace/src/github.com/AstromechZA/BuildingEffectiveCLIApps/demo/main.go:10 +0x23a
+</pre>
+<p>Not off to a good start..</p>
+
+<p>At least it told you what the panic was!</p>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">3/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h3>Help?</h3>
+
+<p>Nope.</p>
+<pre class="chroma">$ ./demo --help
+
+panic: runtime error: index out of range
+
+goroutine 1 [running]:
+main.main()
+    /Users/benmeier/projects/go_workspace/src/github.com/AstromechZA/BuildingEffectiveCLIApps/demo/main.go:15 +0x1ef
+</pre>
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">4/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h3>Man page?</h3>
+
+<p>No way.</p>
+<pre class="chroma">$ man ./demo
+No manual entry for ./demo
+</pre>
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">5/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h3>So we try some arguments</h3>
+<pre class="chroma">$ ./demo a
+panic: runtime error: index out of range
+
+goroutine 1 [running]:
+main.main()
+    /Users/benmeier/projects/go_workspace/src/github.com/AstromechZA/BuildingEffectiveCLIApps/demo/main.go:15 +0x1ef
+</pre>
+<p>And finally get some output:</p>
+<pre class="chroma">$ ./demo a b
+Done.%
+$ echo $?
+0
+</pre>
+<p>Was that a good or bad thing?</p>
+
+<p>Doesn't exactly <em>&quot;Solve&quot;</em> anything!</p>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">6/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h3>Need some help now..</h3>
+
+<ul>
+<li>Ask the developer...</li>
+</ul>
+
+<p><code>.</code></p>
+
+<p><code>.</code></p>
+
+<p><code>.</code></p>
+
+<ul>
+<li>Stackoverflow...</li>
+</ul>
+
+<p><code>.</code></p>
+
+<p><code>.</code></p>
+
+<ul>
+<li>Finally find an old comment on a cached version of a Google Groups page telling us to run it with an <em>integer and a string</em>.</li>
+</ul>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">7/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h3>Aha!</h3>
+<pre class="chroma">$ ./demo 10 world
+Hëllo  0	world
+Hëllo  1	world
+Hëllo  2	world
+Hëllo  3	world
+Hëllo  4	world
+Hëllo  5	world
+Hëllo  6	world
+Hëllo  7	world
+Hëllo  8	world
+Hëllo  9	world
+Done.%
+</pre>
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">8/45</div>
+		</div>
+		
+	<div class="slide-wrap slide-wrap-halign-center slide-wrap-valign-center slide-wrap-talign-center">
+		<div class="markdown-body">
+	<p><meta valign="center" halign="center" talign="center"></p>
+
+<p>Now we can go and celebrate about how <strong>awesome</strong> free software is.</p>
+
+<p><img src="https://media.giphy.com/media/26ufcVAp3AiJJsrIs/giphy.gif" alt="Crying Gif" style="" /></p>
+
+<p>If you have interfaces like this, you can only go up from here!</p>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">9/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h3>Improvements</h3>
+
+<p>Lots of things that we can change here!</p>
+
+<p>They generally fall in a few main areas:</p>
+
+<ol>
+<li><p>Respect the users</p></li>
+
+<li><p>Respect the environment</p></li>
+
+<li><p>Transparency</p></li>
+</ol>
+
+<p>We'll expand on these in the next slides and then implement some of them to improve the app.</p>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">10/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h1>Respect the users</h1>
+
+<p>Have to balance out:</p>
+
+<ul>
+<li><p>How do you <em>expect</em> average users, developers, noobs, and experts to use your app.</p></li>
+
+<li><p>How are users <em>actually going</em> to use your app.</p></li>
+</ul>
+
+<p>These are all difference categories of users and each have their own requirements and use cases that you need to anticipate.</p>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">11/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h3>The average user</h3>
+
+<ul>
+<li><p>Is probably only going to use 50-80% of the features and code paths that your CLI provides.</p>
+
+<ul>
+<li>eg: How many of <code>kubectl</code>'s actions to do actually use in day to day?</li>
+</ul></li>
+
+<li><p>Will use it regularly enough to form semantic memories, but may still require prompting and help some days.</p>
+
+<ul>
+<li>eg: How often do you look up the available subcommands for an object in the <code>docker</code> CLI?</li>
+</ul></li>
+</ul>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">12/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h3>The noob</h3>
+
+<ul>
+<li><p>HAS NO IDEA WHAT THEY ARE DOING</p>
+
+<ul>
+<li>They <em>depend</em> on tutorials, manuals, or word of mouth</li>
+</ul></li>
+
+<li><p>May not even have a compatible system or environment ☹️</p>
+
+<ul>
+<li>Does this tool work with Python 3?</li>
+</ul></li>
+
+<li><p>May be running it as root..</p>
+
+<ul>
+<li><code>rm -rf /etc</code>!</li>
+</ul></li>
+</ul>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">13/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h3>The expert</h3>
+
+<ul>
+<li><p>Knows what to expect whenever they run a command</p></li>
+
+<li><p>Is probably using even the most obscure flags and options</p></li>
+
+<li><p>Has their environment set up <em>just right</em></p></li>
+</ul>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">14/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h3>The developer</h3>
+
+<ul>
+<li><p>Is probably running it from their development environment</p></li>
+
+<li><p>Is not scared off by bugs (probably just ignores them)</p></li>
+
+<li>
+<blockquote>
+<p>Works on my machine!</p>
+</blockquote>
+</li>
+
+<li><p>Has probably never run it in production (in anger)</p></li>
+
+<li><p>Does not record their results</p></li>
+</ul>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">15/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h3>The CI bot?</h3>
+
+<ul>
+<li><p>Does not actually have a screen</p></li>
+
+<li><p>Can not respond to prompts</p></li>
+
+<li><p>Has unlimited patience or none at all</p></li>
+
+<li><p>Does not distinguish between failure cases</p></li>
+</ul>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">16/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h3>Summary</h3>
+
+<ul>
+<li><p>Try to use your CLI from the perspective of average users, noobs, experts, developers, and bots.</p></li>
+
+<li><p><strong>Use these perspectives to drive usability improvements</strong>.</p></li>
+</ul>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">17/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h1>Respect the environment</h1>
+
+<p>It doesn't always run in the same context as it does on your machine.</p>
+
+<p>Users have different</p>
+
+<ul>
+<li>operating systems</li>
+<li>shells</li>
+<li>platforms</li>
+<li>screen sizes</li>
+<li>hardware
+
+<ul>
+<li>clock speed</li>
+<li>available memory</li>
+</ul></li>
+<li>character support</li>
+<li>ttys</li>
+<li>timezones</li>
+</ul>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">18/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h1>Transparency</h1>
+
+<p>Don't hide information that would be better out in the open.</p>
+
+<ul>
+<li><p>Provide points of contact</p>
+
+<ul>
+<li>Where is the documentation?</li>
+</ul></li>
+
+<li><p>Embed documentation</p>
+
+<ul>
+<li>Explain concepts and common usecases</li>
+</ul></li>
+
+<li><p>Feedback/bug reports</p>
+
+<ul>
+<li>Let real user experience drive your development</li>
+</ul></li>
+
+<li><p>Changelogs</p>
+
+<ul>
+<li>What has changed?</li>
+</ul></li>
+
+<li><p>Hints  (&quot;Did you mean X?&quot;)</p></li>
+</ul>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">19/45</div>
+		</div>
+		
+	<div class="slide-wrap slide-wrap-halign-center slide-wrap-valign-center slide-wrap-talign-center">
+		<div class="markdown-body">
+	<p><meta valign="center" halign="center" talign="center"></p>
+
+<h1>Fixing things</h1>
+
+<p>Time for some opinionated changes</p>
+
+<p>&lt;rant&gt;</p>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">20/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h3>Preparing for development : Versioning</h3>
+
+<p>We can't track our improvements without any sense of versioning.</p>
+
+<p>This feeds directly into your <strong>issue tracking</strong> by tying bugs or feature requests to specific versions.</p>
+
+<p>Types of versioning:</p>
+
+<ul>
+<li>Version strings (<em>what version is this meant to be</em>)</li>
+<li>Build dates (<em>when was this created</em>)</li>
+<li>Commit SHA (<em>what was the last change</em>)</li>
+<li>Commit date (<em>when was the last change</em>)</li>
+<li>Publicly available MD5/SHA checksums or GPG signatures (<em>is this official</em>)</li>
+</ul>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">21/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h3>A version string</h3>
+
+<p>Use <a href="http://semver.org" target="_blank">SemVer</a>:</p>
+
+<ol>
+<li>MAJOR version when you make incompatible API changes,</li>
+<li>MINOR version when you add functionality in a backwards-compatible manner, and</li>
+<li>PATCH version when you make backwards-compatible bug fixes.</li>
+</ol>
+
+<p>You probably don't need MAJOR.MINOR.PATCH, start with just MAJOR.MINOR.</p>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">22/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	<p>We could embed it in the CLI code base</p>
+<pre class="chroma"><span class="kd">const</span> <span class="nx">Version</span> <span class="p">=</span> <span class="s">&#34;0.1&#34;</span>
+</pre>
+<p>Or get it from a Git branch or tag,</p>
+
+<p>But lets prefer a version file for this demo</p>
+<pre class="chroma">$ cat VERSION
+0.1
+</pre>
+<p>With a build variable that we can inject</p>
+<pre class="chroma"><span class="kd">var</span> <span class="nx">Version</span> <span class="p">=</span> <span class="s">&#34;unknown&#34;</span>
+</pre><pre class="chroma">$ go build -ldflags &#34;-X \&#34;main.Version=$(cat VERSION)\&#34;&#34;
+</pre>
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">23/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	<p>Do the same with Git info</p>
+<pre class="chroma"><span class="kd">var</span> <span class="nx">CommitSHA</span> <span class="p">=</span> <span class="s">&#34;unknown&#34;</span>
+<span class="kd">var</span> <span class="nx">CommitDate</span> <span class="p">=</span> <span class="s">&#34;1970-01-01T00:00:00Z&#34;</span>
+</pre><pre class="chroma">$ go build -ldflags &#34;
+    -X \&#34;main.Version=$(cat VERSION)\&#34;
+    -X \&#34;main.CommitSHA=$(git rev-parse --short HEAD)\&#34;
+    -X \&#34;main.CommitDate=$(git show -s --format=%cI HEAD)\&#34;
+&#34;
+</pre>
+<p><strong>Note:</strong> Tools like <a href="https://github.com/ahmetb/govvv" target="_blank">govvv</a> can do this for you, but it's easy enough to do in a <code>Makefile</code> or with bash.</p>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">24/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	<p>Allow users to get at the version information</p>
+<pre class="chroma"><span class="nx">versionFlag</span> <span class="o">:=</span> <span class="nx">flag</span><span class="p">.</span><span class="nx">Bool</span><span class="p">(</span><span class="s">&#34;--version&#34;</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="s">&#34;Show the version information&#34;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="nx">versionFlag</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&#34;Version: %s\n&#34;</span><span class="p">,</span> <span class="nx">Version</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&#34;Git Commit: %s\n&#34;</span><span class="p">,</span> <span class="nx">CommitSHA</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&#34;Git Date: %s\n&#34;</span><span class="p">,</span> <span class="nx">CommitDate</span><span class="p">)</span>
+    <span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">}</span>
+</pre><pre class="chroma">$ ./demo --version
+Version: 0.1
+Git Commit: e1a06ec
+Git Date: 2017-07-20T23:06:18+02:00
+</pre>
+<p>Now we can log bugs, reproduce issues, and generally be responsible developers.</p>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">25/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h2>Use a proper args interface</h2>
+
+<ul>
+<li><p>Don't parse <code>os.Args</code> yourself!</p></li>
+
+<li><p><em>Always</em> check <code>len(os.Args)</code> if you are using positional arguments</p></li>
+</ul>
+
+<p>Use an existing parser:</p>
+
+<ul>
+<li>Golang <code>flag</code> (often good enough)</li>
+<li>Python <code>argparse</code> (definitely good enough)</li>
+<li><a href="https://github.com/spf13/cobra" target="_blank">github.com/spf13/cobra</a></li>
+<li><a href="https://github.com/urfave/cli" target="_blank">github.com/urfave/cli</a></li>
+</ul>
+
+<p>These give you more than just parsing, they also provide:</p>
+
+<ul>
+<li><code>--help</code></li>
+<li>&quot;No such option --blah&quot;</li>
+<li>Subcommands</li>
+</ul>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">26/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h3>Developer gives us the new version (0.1)</h3>
+<pre class="chroma">$ ./demo
+$ echo $?
+0
+</pre>
+<p>At least it didn't stack trace this time..</p>
+<pre class="chroma">$ ./demo --help
+This binary solves the greatest programming problem known to man! It will print &#39;N&#39; rows of hello text.
+
+Usage:
+
+$ demo (options...) [N] [text]
+
+-version
+        print the version information
+</pre><pre class="chroma">$ ./demo --version
+Version: 0.1
+Git Commit: e1a06ec
+Git Date: 2017-07-20T23:06:18+02:00
+</pre>
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">27/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h2>Task 2 : Exit codes</h2>
+
+<p><strong>Very Important</strong> when used in scripts, CI, recipes, automated environments</p>
+
+<p>Some <em>traditional</em> values, usually dictated by shells, but nothing official so just concentrate on <code>0</code> vs <code>1</code> - anything else probably won't be noticed unless its needed.</p>
+<pre class="chroma"><span class="kd">func</span> <span class="nx">mainInner</span><span class="p">()</span> <span class="kt">error</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">rand</span><span class="p">.</span><span class="nx">Float32</span><span class="p">()</span> <span class="p">&gt;</span> <span class="mf">0.5</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&#34;Dice says no!&#34;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">nil</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">mainInner</span><span class="p">();</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&#34;Error: %s\n&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span>
+        <span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre>
+<p>Often not noticed in typical calls, but hit when using automation or shell pipelines (<code>pipefail</code>?).</p>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">28/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h2>Task 3 : Error messages and language</h2>
+
+<p>If an error occurs <em>always</em> include a reason and <em>suggest</em> a fix if possible</p>
+<pre class="chroma">USELESS: &#34;unexpected exception&#34;
+MEH: &#34;could not open file&#34;
+USEFUL: &#34;could not open file &#39;/bob&#39;: file does not exist&#34;
+</pre>
+<p>An error message that includes a suggestions means one less question from the user.</p>
+
+<blockquote>
+<p>&quot;Could not write file '/something/else' due to a permission error. Make sure you have write permission on the file.&quot;</p>
+</blockquote>
+
+<p>Be Kind.</p>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">29/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h2>Task 4 : Exploit the different output streams</h2>
+
+<ul>
+<li><p>The user (and shell) probably expects results to be written on <code>stdout</code></p></li>
+
+<li><p>So you usually have <code>stderr</code> for your logs, errors, and messages</p>
+
+<ul>
+<li>This is the default behaviour of standard library logging in Python and Golang.</li>
+</ul></li>
+
+<li><p>If you output machine readable content on <code>stdout</code>, don't muck it up by adding plain text log messages</p></li>
+</ul>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">30/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h2>Task 5 : Allow for input streams</h2>
+
+<ul>
+<li><p>It's great when a user can use the <code>stdin</code> stream</p></li>
+
+<li><p>Can add security in order to prevent sensitive data being written to disk</p></li>
+
+<li><p><code>-</code> is often used as an argument to represent <code>stdin</code> (or <code>stdout</code>)</p>
+
+<ul>
+<li>eg: <code>--input=- --output=-</code></li>
+</ul></li>
+</ul>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">31/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h2>A final version..</h2>
+
+<p>Versioning!</p>
+<pre class="chroma">$ ./demo --version
+Project: demo-cli (https://github.com/AstromechZA/BuildingEffectiveCLIApps)
+Version: 0.2
+Git Commit: e1a06ec
+Git Date: 2017-07-20T23:06:18+02:00
+</pre>
+<p>Error messages and exit codes!</p>
+<pre class="chroma">$ ./demo
+Error: expected 2 arguments [N] [text]; see --help for info
+$ echo $?
+1
+</pre>
+<p>Argument type checking and parsing!</p>
+<pre class="chroma">$ ./demo a world
+Error: failed to parse argument 1 as a number: strconv.Atoi: parsing &#34;a&#34;: invalid syntax
+$ echo $?
+1
+</pre>
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">32/45</div>
+		</div>
+		
+	<div class="slide-wrap slide-wrap-halign-center slide-wrap-valign-center slide-wrap-talign-center">
+		<div class="markdown-body">
+	<p><meta valign="center" halign="center" talign="center"></p>
+
+<h1>Other CLI techniques, issues, and quirks</h1>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">33/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h2>stdin isn't always readable!</h2>
+
+<p>When running as a subprocess, <code>stdin</code> might not be attached to anything. Attempts to prompt the user may hang or fail.</p>
+<pre class="chroma">import &#34;golang.org/x/crypto/ssh/terminal&#34;
+
+...
+
+if terminal.IsTerminal(os.Stdin.Fd()) {
+    // prompt
+    os.Stdin.Readline()
+}
+</pre>
+<p>Another option is <code>Isatty()</code> from <a href="https://github.com/andrew-d/go-termutil" target="_blank">github.com/andrew-d/go-termutil</a></p>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">34/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h2>Environment variables</h2>
+
+<ol>
+<li><p>Name them in a way that relates to your app. You <em>may</em> have to deal with conflicts otherwise..</p>
+
+<ul>
+<li><code>MY_APP_ENABLE_DEBUG=1</code> is more targetted than simply <code>DEBUG=1</code></li>
+</ul></li>
+
+<li><p>Always document these in <code>--help</code></p></li>
+
+<li><p>Tell the user when they are affecting the execution (if possible)</p>
+
+<blockquote>
+<p>&quot;Logging at debug level due to $MY_APP_ENABLE_DEBUG&quot;</p>
+</blockquote>
+</li>
+
+<li><p>Often a <code>--flag</code> is a better choice as they are first class citizens in your CLI</p></li>
+</ol>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">35/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h2>Line rewriting and progress bars</h2>
+
+<p>Most terminals interpret control characters as more than just raw bytes.</p>
+
+<ul>
+<li><code>\r</code> can reset the cursor to the line start</li>
+<li><code>\b</code> can move the cursor one position to the left</li>
+</ul>
+
+<p>Use these to continuously update a progress percentage or progress bar.</p>
+
+<p><strong>BUT</strong> log files and piped output don't handle these well, so have options to disable or mute these.</p>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">36/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h2>Detecting the terminal size</h2>
+
+<p>Editors like <code>vi</code> and <code>nano</code> expand to fill the full size of the terminal.</p>
+
+<p>Most terminals will respond to various syscalls with information about their dimensions (although this is platform dependent).</p>
+
+<p>Some shells will detect and export the dimensions as environment variables <code>$LINES</code>/<code>$COLS</code>. Some terminals will also forward a signal (<code>SIGWINCH</code>) to the process to indicate that the dimensions were changed.</p>
+
+<p>Use this to adapt the width of tables, progress bars, and other things to the size of the users terminal.</p>
+
+<p><em>Remember to default to something sensible when not in a terminal!</em></p>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">37/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h2>Machine readable</h2>
+
+<p>In the spirit of the Linux philosophy, your app or tool should focus on doing <em>one specific thing</em> really well.</p>
+
+<p>This means it is likely to be used to compose more complicated workflows.</p>
+
+<p>So design it to be machine readable and to operate with the standard line-by-line tools like <code>grep</code>/<code>sed</code>/<code>head</code>/<code>tail</code> where necessary.</p>
+<pre class="chroma">Name        Age
+---------------
+Ted         39
+Robin       37
+Barney      41
+</pre>
+<p>vs <code>--json</code></p>
+<pre class="chroma">{&#34;name&#34;: &#34;Ted&#34;, &#34;age&#34;: 39}
+{&#34;name&#34;: &#34;Robin&#34;, &#34;age&#34;: 37}
+{&#34;name&#34;: &#34;Barney&#34;, &#34;age&#34;: 41}
+</pre>
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">38/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h2>Subcommands</h2>
+
+<p>Subcommands can be convenient to keep things in one binary</p>
+<pre class="chroma">$ my-server serve -p 80
+$ my-server list-files
+$ my-server prepare
+</pre>
+<p>But observe the problems that come from going too far in this direction</p>
+
+<ul>
+<li><code>docker</code> cli has/had &gt;50 subcommands each with different (and conflicting) options.</li>
+</ul>
+
+<p>Sometimes separate binaries are better</p>
+<pre class="chroma">$ my-server-serve -p 80
+$ my-server-prepare
+</pre>
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">39/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h2>Using ANSI control codes</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/ANSI_escape_code" target="_blank">ANSI</a> codes can be used to control:</p>
+
+<ul>
+<li>text color</li>
+<li>text style</li>
+<li>blinking</li>
+<li>window titles</li>
+</ul>
+
+<p>Can work <em>very</em> well for user-centric tools and prompts.</p>
+
+<p>But again, only work in tty's that will actual render them.</p>
+<pre class="chroma">ESC[38;5mmy important log lineESC[0m that you must look at
+</pre>
+<p><code>--no-color</code></p>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">40/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h2><code>man</code> pages</h2>
+
+<ul>
+<li>Very platform specific</li>
+<li>Don't attempt unless you know people will use it..</li>
+</ul>
+
+<p>Why not <code>--help</code>, <code>--manual</code> piped into the <code>$PAGER</code>?</p>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">41/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h2>Config files</h2>
+
+<p>If you expect a config file, provide an example config in your <code>--help</code> or as an option:</p>
+<pre class="chroma">--generate-example-config   outputs an example json file on stdout and exits
+</pre>
+<p>This can help to keep your config example synchronised with the code that reads it.</p>
+<pre class="chroma">$ thing --generate-example-config &gt; config.json
+$ thing --config ./config.json
+</pre>
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">42/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h2>Apply CI/CD practices</h2>
+
+<ul>
+<li>Create functional and integration tests for your CLI</li>
+<li>Catch regressions before they merge</li>
+<li>Automatically release new versions to github/webserver/repository</li>
+<li>Combined with versioning, this removes a lot of the manual effort involved in maintaining your tools</li>
+</ul>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">43/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h2>So to recap..</h2>
+
+<h3>1. Respect your users</h3>
+
+<ul>
+<li>They <em>will</em> need help</li>
+<li>Developers are also users</li>
+<li>So are machines</li>
+<li>Someone will try to run it via a Bash script through a Rails app and pass the output over HTTP in JSON to be manipulated in Javascript.</li>
+<li>Empower those who use it</li>
+<li>Provide remedy suggestions</li>
+</ul>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">44/45</div>
+		</div>
+		
+	<div class="slide-wrap">
+		<div class="markdown-body">
+	
+<h3>2. Respect your environment</h3>
+
+<ul>
+<li>Bash is not the only shell</li>
+<li>Either restrict compilation to one platform, or commit to being cross platform.</li>
+<li>Sometimes there isn't a TTY</li>
+<li>Multi-byte characters may not display correctly</li>
+<li>Control codes may not function correctly</li>
+<li>Colours may not display at all</li>
+</ul>
+
+<h3>3. Transparency</h3>
+
+<ul>
+<li>Be contactable</li>
+<li>Make it easy to identify and reproduce bugs</li>
+<li>Explain your errors</li>
+</ul>
+
+			</div>
+			
+				<div class="page-footer">Ben Meier - Oracle Bristol Dojo Sessions - 10 August 2018</div>
+			
+			<div class="page-number">45/45</div>
+		</div>
+		
+</body>
+</html>
