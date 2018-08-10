@@ -452,7 +452,7 @@ func main() {
 }
 ```
 
-Often not noticed in typical calls, but hit when using automation or shell pipelines (`pipefail`?).
+Exit codes are often not noticed in typical calls, but hit when using automation or shell pipelines (`pipefail`?).
 
 ---
 
@@ -565,7 +565,7 @@ Another option is `Isatty()` from [github.com/andrew-d/go-termutil](https://gith
 
     > "Logging at debug level due to $MY_APP_ENABLE_DEBUG"
 
-4. Often a `--flag` is a better choice as they are first class citizens in your CLI
+4. Often a `--debug` is a better choice as they are first class citizens in your CLI and its help menus
 
 ---
 
@@ -575,8 +575,9 @@ Most terminals interpret control characters as more than just raw bytes.
 
 - `\r` can reset the cursor to the line start
 - `\b` can move the cursor one position to the left
+- ANSI codes can move the cursor and page fairly arbitrarily.
 
-Use these to continuously update a progress percentage or progress bar. 
+Use these to continuously update a progress percentage, progress bar, or the entire screen.
 
 **BUT** log files and piped output don't handle these well, so have options to disable or mute these.
 
@@ -612,7 +613,7 @@ Robin       37
 Barney      41
 ```
 
-vs `--json`
+vs `--json` 
 
 ```
 {"name": "Ted", "age": 39}
@@ -645,12 +646,38 @@ $ my-server-prepare
 
 ---
 
+Noun-verb or verb-noun?
+
+- `docker image ls blah` vs `kubectl get pod blah`?
+
+Sometimes there are **too many verbs compared to nouns** and not enough commonality between the nouns. You can end up doing
+crazy things like turning `cckube open nodeport` into `cckube create port-opening` just to use a common verb ("create").
+
+Whatever you do, keep it consistent. Don't have `cli create balloon` and `cli balloon destroy`.
+
+---
+
+## Bash completion
+
+Allow the shell to prompt the user with available subcommands or suitable files!
+
+- This is _annoyingly_ platform and shell specific.
+
+- Bash vs Zsh vs ?
+- Linux vs MacOS
+
+- If you're lucky, you can use a prebuilt library that hooks into your CLI processing and just handles it for you.
+
+    - Python has `argcomplete` to complement `argparse`
+
+---
+
 ## Using ANSI control codes
 
 [ANSI](https://en.wikipedia.org/wiki/ANSI_escape_code) codes can be used to control:
 
-- text color
-- text style
+- text color (16, 256, or RGB)
+- text style (bold, underline)
 - blinking
 - window titles
 
@@ -664,16 +691,18 @@ But again, only work in tty's that will actual render them.
 
 And remember that terminals often have colour schemes that change the default colour maps.
 
-
+Test for colour support by looking at `$TERM` or `$ tput colors`.
 
 ---
 
 ## `man` pages
 
 - Very platform specific
+
 - Don't attempt unless you know people will use it..
 
-Why not `--help`, `--manual` piped into the `$PAGER`?
+Better to implement a longer `help` or `manual` subcommand which delivers a large block of text straight into the 
+`$PAGER` configured (pager is usually `less`).
 
 ---
 
@@ -687,6 +716,9 @@ This can help to keep your config example synchronised with the code that reads 
 
     $ thing --generate-example-config > config.json
     $ thing --config ./config.json
+
+It can also be handy to provide validation options as well. This would just validate the config and not actually do 
+any work.
 
 ---
 
@@ -713,6 +745,8 @@ This can help to keep your config example synchronised with the code that reads 
     - ALL OF THE REASONS IN THESE SLIDES
 
 - Yes you can implement some of the improvements, but really you're going to end up with an unmaintainable, and unsupported, mess.
+
+- Start your bash scripts with `#!/usr/bin/env python` :trollface:
 
 ---
 
